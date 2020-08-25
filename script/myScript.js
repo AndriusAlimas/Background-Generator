@@ -18,6 +18,8 @@ setGradient(false);
 
 //FUNCTIONS
 function setGradient(generated){
+    
+
     if(generated){
         body.style.background = randomColor;
     }else{
@@ -28,7 +30,7 @@ function setGradient(generated){
     + color2.value 
     +  ")";
     }
-    
+  
 
     css.textContent = body.style.background + ";";
     randomColor = "linear-gradient(to right,";
@@ -54,3 +56,19 @@ function generateRandomColors(){
   randomColor +=")";
   setGradient(true);
 }
+
+var rgbToHex = function (rgb) { 
+    var hex = Number(rgb).toString(16);
+    if (hex.length < 2) {
+         hex = "0" + hex;
+    }
+    return hex;
+  };
+
+  var fullColorHex = function(r,g,b) {   
+    var red = rgbToHex(r);
+    var green = rgbToHex(g);
+    var blue = rgbToHex(b);
+    return red+green+blue;
+  };
+
